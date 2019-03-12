@@ -1,0 +1,8 @@
+<h1>Edit User</h1>
+
+<%= form_with model: @user, local: true do |form| %>
+    <div>
+        <%= render partial: "/users/form", object: form %>
+        <%= form.submit "Update Profile" %>
+    </div>
+<% end %>
