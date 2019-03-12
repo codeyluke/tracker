@@ -20,10 +20,9 @@ class UsersController < Clearance::UsersController
     end
 
     def destroy 
-        byebug
         destroy_user = User.find(params[:id])
         destroy_user.destroy
-        redirect_to "/"
+        redirect_to users_path
     end
 
     private 
