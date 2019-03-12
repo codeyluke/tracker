@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
-  resources :users, controller: :users, only: [:create, :edit, :update, :index, :show, :destroy]
+  # resources :users, controller: :users, only: [:create, :edit, :update, :index, :show, :destroy]
+  resources :users
+  
 
+  # match "users/:id" => 'users#destroy', via: :delete
   # resources :users, controller: "clearance/users", only: [:create] do
   #   resource :password,
   #     controller: "clearance/passwords",
