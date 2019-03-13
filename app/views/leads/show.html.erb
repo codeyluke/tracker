@@ -1,0 +1,18 @@
+<h2> Lead Details </h2>
+
+<div>
+    <p> Company : <%= "#{@lead.company}".present? ? @lead.company : "nil" %></p>
+    <p> Industry : <%= "#{@lead.industry}".present? ? @lead.industry : "nil" %></p>
+    <p> Industry Description : <%= "#{@lead.industry_desc}".present? ? @lead.industry_desc : "nil" %></p>
+    <p> GateKeeper : <%= "#{@lead.gkeeper_name}".present? ? @lead.gkeeper_name : "nil" %></p>
+    <p> General Email 1 : <%= "#{@lead.g_email_1}".present? ? @lead.g_email_1 : "nil" %></p>
+    <p> General Email 2 : <%= "#{@lead.g_email_2}".present? ? @lead.g_email_2 : "nil" %></p>
+    <p> General Phone 1 : <%= "#{@lead.g_phone_1}".present? ? @lead.g_phone_1 : "nil" %></p>
+    <p> General Phone 2 : <%= "#{@lead.g_phone_2}".present? ? @lead.g_phone_2 : "nil" %></p>
+    <p> Decision Maker Name : <%= "#{@lead.dm_name}".present? ? @lead.dm_name : "nil" %></p>
+    <p> Decision Maker Phone Number : <%= "#{@lead.dm_phone}".present? ? @lead.dm_phone : "nil" %></p>
+    <p> Decision Maker Email :<%= "#{@lead.dm_email}".present? ? @lead.dm_email : "nil" %></p>
+</div>
+
+<%= link_to "Edit Lead", edit_lead_path(@lead) %>
+<%= link_to "Index Lead", leads_path %>

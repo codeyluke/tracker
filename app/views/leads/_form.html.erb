@@ -1,1 +1,62 @@
-test
+<%= form_with model: @lead, local: true do |form| %>
+    
+    <div class="text-field">
+        <%= form.label :company %>
+        <%= form.text_field :company %>
+    </div>
+
+
+    <div class="text-field">
+        <%= form.label :industry %>
+        <%= form.text_field :industry %>
+    </div>
+
+
+    <div class="text-field">
+        <%= form.label :industry_description %>
+        <%= form.text_field :industry_desc %>
+    </div>
+
+    <div class="text-field">
+        <%= form.label :gatekeeper %>
+        <%= form.text_field :gkeeper_name %>
+    </div>
+
+    <div class="text-field">
+        <%= form.label :general_email_1 %>
+        <%= form.text_field :g_email_1, type: "email" %>
+    </div>
+
+    <div class="text-field">
+        <%= form.label :general_email_2 %>
+        <%= form.text_field :g_email_2, type: "email" %>
+    </div>
+
+    <div class="text-field">
+        <%= form.label :general_phone_1 %>
+        <%= form.text_field :g_phone_1 %>
+    </div>
+
+    <div class="text-field">
+        <%= form.label :general_phone_2 %>
+        <%= form.text_field :g_phone_2 %>
+    </div>
+
+
+    <div class="text-field">
+        <%= form.label :decision_maker_name %>
+        <%= form.text_field :dm_name %>
+    </div>
+
+    <div class="text-field">
+        <%= form.label :decision_maker_phone_number %>
+        <%= form.text_field :dm_phone %>
+    </div>
+
+    <div class="text-field">
+        <%= form.label :decision_maker_email %>
+        <%= form.text_field :dm_email, type: "email" %>
+    </div>
+    
+    <%= form.submit %>
+<% end %>
