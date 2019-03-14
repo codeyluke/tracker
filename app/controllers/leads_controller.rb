@@ -9,7 +9,6 @@ class LeadsController < ApplicationController
 
     def create
         lead = Lead.new(lead_params)
-        lead.creator_id = current_user.id
         lead.user_id = current_user.id
         if lead.save
             flash[:notice] = "Lead Saved!"

@@ -1,4 +1,5 @@
 <h2> Lead Details </h2>
+<h4>Created by <%= link_to "#{@lead.user.first_name} #{@lead.user.last_name}", user_path(@lead.user) %></h4>
 
 <div>
     <p> Company : <%= "#{@lead.company}".present? ? @lead.company : "nil" %></p>
@@ -16,3 +17,4 @@
 
 <%= link_to "Edit Lead", edit_lead_path(@lead) %>
 <%= link_to "Index Lead", leads_path %>
+<%= link_to "Delete Lead", lead_path(@lead), method: :delete %>
