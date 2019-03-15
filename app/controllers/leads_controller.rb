@@ -21,6 +21,7 @@ class LeadsController < ApplicationController
 
     def show
         @lead = Lead.find(params[:id])
+        @engage = @lead.engage.user
     end
 
     def edit

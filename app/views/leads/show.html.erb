@@ -15,6 +15,12 @@
     <p> Decision Maker Email :<%= "#{@lead.dm_email}".present? ? @lead.dm_email : "nil" %></p>
 </div>
 
+<div>
+    <% if @engage != current_user %>
+        <%= link_to "New Engage", new_lead_engage_path(params[:id]) %>
+    <% end %>
+</div>
+<br>
 <%= link_to "Edit Lead", edit_lead_path(@lead) %>
 <%= link_to "Index Lead", leads_path %>
 <%= link_to "Delete Lead", lead_path(@lead), method: :delete %>

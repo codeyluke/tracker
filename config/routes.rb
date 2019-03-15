@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get "/sign_up" => "clearance/users#new", as: "sign_up"
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   
-  resources :leads
+  resources :leads do 
+    resources :engages, only: [:new, :create, :destroy]
+  end
 end

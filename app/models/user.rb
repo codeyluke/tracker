@@ -3,6 +3,7 @@ class User < ApplicationRecord
   enum role: [:sales, :admin]
   has_many :authentications, dependent: :destroy
   has_many :leads
+  has_many :engages
 
   def self.create_with_auth_and_hash(authentication, auth_hash)
     user = self.create!(

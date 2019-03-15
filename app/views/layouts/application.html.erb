@@ -22,6 +22,7 @@
   </div>
 
   <%= link_to "Home", root_path %> 
+  <%= "signed in as #{current_user.email}"%>
   <%= yield %>
 </body>
 </html>
