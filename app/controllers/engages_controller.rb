@@ -19,6 +19,9 @@ class EngagesController < ApplicationController
     end
 
     def destroy 
-     
+        engage = Engage.find_by(lead_id: params[:lead_id], user_id: params[:id])
+        engage.destroy
+        flash[:notice] = "Engage Removed"
+        redirect_to lead_path(params[:lead_id])
     end
 end

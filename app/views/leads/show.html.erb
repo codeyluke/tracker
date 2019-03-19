@@ -18,6 +18,8 @@
 <div>
     <% if @engage != current_user %>
         <%= link_to "New Engage", new_lead_engage_path(params[:id]) %>
+    <% else %>
+        <%= link_to "Delete Engage", lead_engage_path(lead_id: params[:id], id: current_user.id), method: :delete %>
     <% end %>
 </div>
 <br>
