@@ -21,7 +21,6 @@ class LeadsController < ApplicationController
 
     def show
         @lead = Lead.find(params[:id])
-        @engage = @lead.engage.user
     end
 
     def edit
@@ -44,7 +43,8 @@ class LeadsController < ApplicationController
     private
     def lead_params
         params[:lead].permit(
-            :company, 
+            :business_name,
+            :company_name, 
             :industry,
             :industry_desc,
             :g_email_1,

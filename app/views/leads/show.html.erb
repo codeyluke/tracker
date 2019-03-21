@@ -2,7 +2,8 @@
 <h4>Created by <%= link_to "#{@lead.user.first_name} #{@lead.user.last_name}", user_path(@lead.user) %></h4>
 
 <div>
-    <p> Company : <%= "#{@lead.company}".present? ? @lead.company : "nil" %></p>
+    <p> Company : <%= "#{@lead.business_name}".present? ? @lead.business_name : "nil" %></p>
+    <p> Company : <%= "#{@lead.company_name}".present? ? @lead.company_name : "nil" %></p>
     <p> Industry : <%= "#{@lead.industry}".present? ? @lead.industry : "nil" %></p>
     <p> Industry Description : <%= "#{@lead.industry_desc}".present? ? @lead.industry_desc : "nil" %></p>
     <p> GateKeeper : <%= "#{@lead.gkeeper_name}".present? ? @lead.gkeeper_name : "nil" %></p>
@@ -16,7 +17,7 @@
 </div>
 
 <div>
-    <% if @engage != current_user %>
+    <% if @lead.engage == nil %>
         <%= link_to "New Engage", new_lead_engage_path(params[:id]) %>
     <% else %>
         <%= link_to "Delete Engage", lead_engage_path(lead_id: params[:id], id: current_user.id), method: :delete %>

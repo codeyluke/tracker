@@ -1,8 +1,10 @@
 <h1>Index Leads</h1>
 
 <hr>
+
 <div>
     <% @leads.each do |lead| %>
-        <%= link_to "#{lead.company}", lead_path(lead) %> <br>
+        <%= link_to "#{lead.company_name}", lead_path(lead) %> <br>
     <% end %>
 </div>
+
